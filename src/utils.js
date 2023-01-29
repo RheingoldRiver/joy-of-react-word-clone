@@ -1,3 +1,5 @@
+import { NUM_OF_GUESSES_ALLOWED } from "./constants";
+
 export const sample = (arr) => {
   return arr[Math.floor(Math.random() * arr.length)];
 };
@@ -13,3 +15,10 @@ export const range = (start, end, step = 1) => {
   }
   return output;
 };
+
+export const guessList = () => { return range(NUM_OF_GUESSES_ALLOWED).map(i=>{ return {
+    word: "",
+    results: [],
+    id:crypto.randomUUID()
+  }})
+}

@@ -56,3 +56,32 @@ export const KEYBOARD_LEETERS = [
   ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
   ['Z', 'X', 'C', 'V', 'B', 'N', 'M']
 ];
+
+export const DEFAULT_LETTERS = {
+    A: "incorrect",
+    B: "incorrect",
+    C: "incorrect",
+    D: "incorrect",
+    E: "incorrect",
+    F: "incorrect",
+    G: "incorrect",
+    H: "incorrect",
+    I: "incorrect",
+    J: "incorrect",
+    K: "incorrect",
+    L: "incorrect",
+    M: "incorrect",
+    N: "incorrect",
+    O: "incorrect",
+    P: "incorrect",
+    Q: "incorrect",
+    R: "incorrect",
+    S: "incorrect",
+    T: "incorrect",
+    U: "incorrect",
+    V: "incorrect",
+    W: "incorrect",
+    X: "incorrect",
+    Y: "incorrect",
+    Z: "incorrect",
+  }
