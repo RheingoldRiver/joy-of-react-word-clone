@@ -124,17 +124,20 @@ h1 {
   --radius: 0px 0px 0px 4px;
 }
 
-.cell.correct {
+.cell.correct,
+.keyboard-cell.correct {
   background: var(--color-success);
   border-color: var(--color-success);
   color: white;
 }
-.cell.incorrect {
+.cell.incorrect,
+.keyboard-cell.incorrect {
   background: var(--color-gray-300);
   border-color: var(--color-gray-300);
   color: white;
 }
-.cell.misplaced {
+.cell.misplaced,
+.keyboard-cell.misplaced {
   background: var(--color-warning);
   border-color: var(--color-warning);
   color: white;
@@ -183,6 +186,22 @@ h1 {
 .sad.banner {
   background: var(--color-error);
   color: white;
+}
+
+.keyboard-container {
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.keyboard-row {
+  display:flex;
+  flex-direction:row;
+}
+
+.keyboard-cell {
+  padding:1em;
 }
 
 .visually-hidden {
