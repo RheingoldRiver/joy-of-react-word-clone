@@ -204,6 +204,14 @@ h1 {
   padding:1em;
 }
 
+.new-game-button {
+  outline: 1px solid;
+  border-radius: 5px;
+  padding: .5em;
+  margin-left:.5em;
+  cursor:pointer;
+}
+
 .visually-hidden {
   position: absolute;
   overflow: hidden;

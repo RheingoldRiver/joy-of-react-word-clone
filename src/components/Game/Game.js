@@ -1,56 +1,25 @@
-import { range, sample } from '../../utils';
-import { WORDS } from '../../data';
+import { sample, guessList } from '../../utils';
+import { WORDS, DEFAULT_LETTERS } from '../../data';
 import Input from '../Input';
 import BoardRow from '../BoardRow';
 import Keyboard from '../Keyboard'
 import React from 'react';
 import {checkGuess} from '../../game-helpers';
 import { NUM_OF_GUESSES_ALLOWED } from '../../constants';
-
-
-// Pick a random word on every pageload.
-const answer = sample(WORDS);
-// To make debugging easier, we'll log the solution in the console.
-// console.info({ answer });
+import Banner from '../Banner/Banner';
 
 function Game() {
   const [input, setInput] = React.useState("");
   const [, setGuess] = React.useState("");
-  const [guesses, setGuesses] = React.useState(range(NUM_OF_GUESSES_ALLOWED).map(i=>{ return {
-    word: "",
-    results: [],
-    id:crypto.randomUUID()
-  }}));
+  
+  // Game State
+  const [guesses, setGuesses] = React.useState(guessList());
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const [endOfGame, setEndOfGame] = React.useState("");
-    const [letters, setLetters] = React.useState({
-    A: "incorrect",
-    B: "incorrect",
-    C: "incorrect",
-    D: "incorrect",
-    E: "incorrect",
-    F: "incorrect",
-    G: "incorrect",
-    H: "incorrect",
-    I: "incorrect",
-    J: "incorrect",
-    K: "incorrect",
-    L: "incorrect",
-    M: "incorrect",
-    N: "incorrect",
-    O: "incorrect",
-    P: "incorrect",
-    Q: "incorrect",
-    R: "incorrect",
-    S: "incorrect",
-    T: "incorrect",
-    U: "incorrect",
-    V: "incorrect",
-    W: "incorrect",
-    X: "incorrect",
-    Y: "incorrect",
-    Z: "incorrect",
-  })
+  const [letters, setLetters] = React.useState(DEFAULT_LETTERS);
+  const [answer, setAnswer] = React.useState(sample(WORDS));
+  
+  console.log(answer);
   
   let processInput = (e) => {
     setInput(e.target.value);
@@ -88,12 +57,23 @@ function Game() {
     }
     setGuesses(newGuesses);
   }
+  
+  let resetGame = (e)=>{
+    e.preventDefault();
+    setAnswer(sample(WORDS));
+    setGuesses(guessList());
+    setCurrentIndex(0);
+    setEndOfGame('');
+    setLetters(DEFAULT_LETTERS);
+    }
+  
   return (
     <div className="game-wrapper">
     <div className="guess-results">
     {guesses.map(({word, results, id})=><BoardRow word={word} results={results} id={id} key={id}></BoardRow>)}
     </div>
-  <Input value={input} processInput={processInput} processGuess={processGuess} endOfGame={endOfGame} currentIndex={currentIndex} answer={answer}></Input>
+  <Input value={input} processInput={processInput} processGuess={processGuess} endOfGame={endOfGame} currentIndex={currentIndex} answer={answer} resetGame={resetGame}></Input>
+    {endOfGame === "" ? "" : <Banner endResult={endOfGame} currentIndex={currentIndex} answer={answer} resetGame={resetGame}></Banner>}
           <Keyboard letters={letters}/>
   </div>);
 }
