@@ -1,7 +1,7 @@
-function Cell({letter, status, key}) {
-  return <div className={`cell ${status}`} key={key}>
+function Cell({letter, status, id}) {
+  return <span className={`cell ${status}`} key={id}>
     {letter ?? ""}
-  </div>;
+  </span>;
 }
 
 export default Cell;
