@@ -17,9 +17,6 @@ export function checkGuess(guess, answer) {
     } else {
       status = 'incorrect';
     }
-    return {
-      letter: guessChar,
-      status,
-    };
+    return status;
   });
 }
