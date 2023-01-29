@@ -24,7 +24,7 @@ export const DEFAULT_LETTERS = {
   
   Rather than a single state variable tracking both the letter & the position along with its state. This was just so much easier to type. But, it's less clean cos it's 2 things to pass between objects. So that's kinda bad.
   
-- I also called the keyboard key `Key` which is legal but not a good conflict with `kwy` so that's not something I will do again.
+- I also called the keyboard key `Key` which is legal but not a good conflict with `key` so that's not something I will do again.
 - I'm not sure where the keyboard should've gone. I put it inside of the game but maybe I should've lifted ALL the state up into the app so the keyboard could've gone there. Not sure.
 - When implementing the keyboard I wasn't sure how the logic should've worked for if you previously got a letter right but now got it misplaced. I chose to overwrite it (just because that was how it works by default) but yeah not sure what should be done in the original game, I've never played it.
 
