@@ -1,5 +1,6 @@
-function Cell({letter, status, id}) {
-  return <span className={`cell ${status}`} key={id}>
+function Cell({letter, status}) {
+  let className = status ? `cell ${status}` : 'cell';
+  return <span className={className}>
     {letter ?? ""}
   </span>;
 }
