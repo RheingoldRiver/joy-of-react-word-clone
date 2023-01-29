@@ -10,7 +10,6 @@ import Banner from '../Banner/Banner';
 
 function Game() {
   const [input, setInput] = React.useState("");
-  const [, setGuess] = React.useState("");
   
   // Game State
   const [guesses, setGuesses] = React.useState(guessList());
@@ -31,7 +30,6 @@ function Game() {
       return;
     }
     let newGuess = input.toUpperCase();
-    setGuess(newGuess);
     setInput('');
     let newGuesses = [...guesses];
     newGuesses[currentIndex].word = newGuess;
