@@ -2,7 +2,6 @@ import HappyText from "../HappyText/HappyText";
 import SadText from "../SadText"
 
 function Banner({endResult, currentIndex, answer, resetGame}) {
-  console.log(resetGame);
   return <div className={`banner ${endResult}`}>
     <p>
       {endResult === "happy" ? <HappyText currentIndex={currentIndex}/> : <SadText answer={answer}/>}

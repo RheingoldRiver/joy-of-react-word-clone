@@ -19,7 +19,7 @@ function Game() {
   const [letters, setLetters] = React.useState(DEFAULT_LETTERS);
   const [answer, setAnswer] = React.useState(sample(WORDS));
   
-  console.log(answer);
+  // console.log(answer);
   
   let processInput = (e) => {
     setInput(e.target.value);
@@ -68,7 +68,7 @@ function Game() {
     }
   
   return (
-    <div className="game-wrapper">
+    <div className={`game-wrapper ${endOfGame}`}>
     <div className="guess-results">
     {guesses.map(({word, results, id})=><BoardRow word={word} results={results} id={id} key={id}></BoardRow>)}
     </div>
