@@ -12,11 +12,11 @@ function Game() {
   const [input, setInput] = React.useState("");
   
   // Game State
-  const [guesses, setGuesses] = React.useState(guessList());
+  const [guesses, setGuesses] = React.useState(guessList);
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const [endOfGame, setEndOfGame] = React.useState("");
   const [letters, setLetters] = React.useState(DEFAULT_LETTERS);
-  const [answer, setAnswer] = React.useState(sample(WORDS));
+  const [answer, setAnswer] = React.useState(()=>{return sample(WORDS)});
   
   // console.log(answer);
   
