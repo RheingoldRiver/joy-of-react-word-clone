@@ -32,6 +32,7 @@ export const DEFAULT_LETTERS = {
 * Use minLength & maxLength on the html input (although that can occasionally fail)
 * Careful not to create css classes called "undefined"
 * oh my god all you have to do to check for victory is if guess == solution /facepalm
+    * This one I'm not fixing (I want a reference for reduce syntax anyway)
 * it's a disabled= html tag on the input, not totally not showing it, if the game is over
 * The text from each of the banners should've been injected via `children` (i.e. dependency injection)
 * Use && instead of so many ternaries for conditional display
