@@ -4,12 +4,13 @@ import Input from "../Input";
 import BoardRow from "../BoardRow";
 import Keyboard from "../Keyboard";
 import React from "react";
-import { checkGuess } from "../../game-helpers";
+import { checkGuess, PLACEMENT_VALUES, updateLetters } from "../../game-helpers";
 import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 import Banner from "../Banner/Banner";
 
-function Game() {
+function Game({ cheatMode }) {
   const [input, setInput] = React.useState("");
+  console.log(cheatMode);
 
   // Game State
   const [guesses, setGuesses] = React.useState(guessList);
@@ -20,7 +21,7 @@ function Game() {
     return sample(WORDS);
   });
 
-  // console.log(answer);
+  console.log(answer);
 
   let processInput = (e) => {
     setInput(e.target.value);
@@ -36,16 +37,13 @@ function Game() {
     let newGuesses = [...guesses];
     newGuesses[currentIndex].word = newGuess;
     const results = checkGuess(newGuess, answer);
-    const netResult = results.reduce((c, r) => {
-      return r === "correct" ? c + 1 : c;
-    }, 0);
     let newLetters = { ...letters };
     for (let i in newGuess.split("")) {
-      newLetters[newGuess[i]] = results[i];
+      updateLetters(newLetters, newGuess[i], results[i]);
     }
     setLetters(newLetters);
     newGuesses[currentIndex].results = results;
-    if (netResult === 5) {
+    if (newGuess === answer) {
       setEndOfGame("happy");
       return;
     }
@@ -58,6 +56,16 @@ function Game() {
     setGuesses(newGuesses);
   };
 
+  let updateLetter = (letter) => {
+    let newLetters = { ...letters };
+    const currentScore = PLACEMENT_VALUES[newLetters[letter]];
+    console.log(cheatMode);
+    if (cheatMode && answer.includes(letter) && currentScore <= PLACEMENT_VALUES.misplaced_cheating) {
+      newLetters[letter] = "misplaced_cheating";
+      setLetters(newLetters);
+    }
+  };
+
   let resetGame = (e) => {
     e.preventDefault();
     setAnswer(sample(WORDS));
@@ -68,7 +76,7 @@ function Game() {
   };
 
   return (
-    <div className={`game-wrapper ${endOfGame}`}>
+    <div className={`${endOfGame}`}>
       <div className="guess-results">
         {guesses.map(({ word, results, id }) => (
           <BoardRow word={word} results={results} id={id} key={id}></BoardRow>
@@ -88,7 +96,7 @@ function Game() {
       ) : (
         <Banner endResult={endOfGame} currentIndex={currentIndex} answer={answer} resetGame={resetGame}></Banner>
       )}
-      <Keyboard letters={letters} />
+      <Keyboard letters={letters} updateLetter={updateLetter} cheatMode={cheatMode} />
     </div>
   );
 }

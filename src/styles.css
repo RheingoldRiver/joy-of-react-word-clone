@@ -40,10 +40,23 @@ button {
   color: inherit;
 }
 
+.app-container {
+  display:grid;
+  grid-template-areas:". game cheat"
+                      ". game .";
+  grid-template-columns: 33% 33% 33%;
+}
+
+.cheat-mode-wrapper {
+  grid-area: cheat;
+  justify-self:end;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  grid-area: game;
 }
 
 header {
@@ -142,7 +155,8 @@ h1 {
   color: white;
 }
 .cell.misplaced,
-.keyboard-cell.misplaced {
+.keyboard-cell.misplaced,
+.keyboard-cell.misplaced_cheating {
   background: var(--color-warning);
   border-color: var(--color-warning);
   color: white;
@@ -207,6 +221,14 @@ h1 {
 
 .keyboard-cell {
   padding:1em;
+}
+
+.game-wrapper.honest-mode .keyboard-cell {
+  cursor:auto;
+}
+
+.game-wrapper.cheat-mode .keyboard-cell {
+  cursor: pointer;
 }
 
 .new-game-button {
