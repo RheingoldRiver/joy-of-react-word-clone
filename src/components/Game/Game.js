@@ -10,7 +10,6 @@ import Banner from "../Banner/Banner";
 
 function Game({ cheatMode }) {
   const [input, setInput] = React.useState("");
-  console.log(cheatMode);
 
   // Game State
   const [guesses, setGuesses] = React.useState(guessList);
@@ -59,7 +58,6 @@ function Game({ cheatMode }) {
   let updateLetter = (letter) => {
     let newLetters = { ...letters };
     const currentScore = PLACEMENT_VALUES[newLetters[letter]];
-    console.log(cheatMode);
     if (cheatMode && answer.includes(letter) && currentScore <= PLACEMENT_VALUES.misplaced_cheating) {
       newLetters[letter] = "misplaced_cheating";
       setLetters(newLetters);

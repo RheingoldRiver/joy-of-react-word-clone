@@ -9,7 +9,6 @@ function CheatMode({ cheatMode, setCheatMode }) {
           name="cheatmode"
           value={cheatMode}
           onChange={(e) => {
-            console.log(e.target.checked);
             setCheatMode(e.target.checked);
           }}
         ></input>
