@@ -1,6 +1,18 @@
-function Key({ children, status }) {
+function Key({ status, letter, updateLetter, cheatMode }) {
   let className = status ? `keyboard-cell ${status}` : "keyboard-cell";
-  return <div className={className}>{children}</div>;
+  return (
+    <form
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        updateLetter(letter);
+      }}
+    >
+      <button className={className} disabled={!cheatMode}>
+        {letter}
+      </button>
+    </form>
+  );
 }
 
 export default Key;

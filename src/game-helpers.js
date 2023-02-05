@@ -20,3 +20,16 @@ export function checkGuess(guess, answer) {
     return status;
   });
 }
+
+export const PLACEMENT_VALUES = {
+  incorrect: 0,
+  misplaced_cheating: 1,
+  misplaced: 2,
+  correct: 3,
+};
+
+export function updateLetters(letters, letter, result) {
+  const currentScore = PLACEMENT_VALUES[letters[letter]];
+  if (currentScore > PLACEMENT_VALUES[result]) return;
+  letters[letter] = result;
+}
