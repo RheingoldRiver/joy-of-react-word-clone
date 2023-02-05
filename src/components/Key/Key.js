@@ -1,4 +1,7 @@
+import React from "react";
+
 function Key({ status, letter, updateLetter, cheatMode }) {
+  const letterId = React.useId();
   let className = status ? `keyboard-cell ${status}` : "keyboard-cell";
   return (
     <form
@@ -7,8 +10,10 @@ function Key({ status, letter, updateLetter, cheatMode }) {
         e.stopPropagation();
         updateLetter(letter);
       }}
+      className={className}
+      data-lpignore="true"
     >
-      <button className={className} disabled={!cheatMode}>
+      <button id={letterId} disabled={!cheatMode} data-lpignore="true" className="keyboard-letter">
         {letter}
       </button>
     </form>
