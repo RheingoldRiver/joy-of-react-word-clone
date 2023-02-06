@@ -1,0 +1,19 @@
+{
+  "include": ["src"],
+  "exclude": [
+    ".cache",
+    "build",
+    "node_modules",
+    "**/node_modules/*",
+    "**/.cache/*",
+    "**/build/*"
+  ],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "target": "es2020",
+    "module": "commonjs",
+    "strict": true,
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}

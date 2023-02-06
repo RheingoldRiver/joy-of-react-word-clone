@@ -6,7 +6,7 @@ import Keyboard from "../Keyboard";
 import React from "react";
 import { checkGuess, PLACEMENT_VALUES, updateLetters } from "../../game-helpers";
 import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
-import Banner from "../Banner/Banner";
+import Banner from "../Banner";
 
 function Game({ cheatMode }) {
   const [input, setInput] = React.useState("");
