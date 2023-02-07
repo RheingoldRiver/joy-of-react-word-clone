@@ -8,7 +8,6 @@ import { checkGuess, PLACEMENT_VALUES, updateLetters } from "../../game-helpers"
 import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 import Banner from "../Banner";
 import Keyboard from "../Keyboard";
-import Key from "../Key/Key";
 import useHotkey from "../../hooks/use-hotkey";
 
 function Game({ cheatMode }) {
@@ -116,7 +115,6 @@ function Game({ cheatMode }) {
         <Banner endResult={endOfGame} currentIndex={currentIndex} answer={answer} resetGame={resetGame}></Banner>
       )}
       <Keyboard letters={letters} updateLetter={updateLetter} cheatMode={cheatMode} />
-      <Key></Key>
     </div>
   );
 }
