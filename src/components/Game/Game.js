@@ -2,11 +2,14 @@ import { sample, guessList } from "../../utils";
 import { WORDS, DEFAULT_LETTERS } from "../../data";
 import Input from "../Input";
 import BoardRow from "../BoardRow";
-import Keyboard from "../Keyboard";
+
 import React from "react";
 import { checkGuess, PLACEMENT_VALUES, updateLetters } from "../../game-helpers";
 import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 import Banner from "../Banner";
+import Keyboard from "../Keyboard";
+import Key from "../Key/Key";
+import useHotkey from "../../hooks/use-hotkey";
 
 function Game({ cheatMode }) {
   const [input, setInput] = React.useState("");
@@ -20,7 +23,25 @@ function Game({ cheatMode }) {
     return sample(WORDS);
   });
 
-  console.log(answer);
+  // Add undo hotkey
+  useHotkey(
+    "Control",
+    "Z",
+    () => {
+      if (!cheatMode) return;
+      if (currentIndex === 0) return;
+      let newIndex = currentIndex - 1;
+      setCurrentIndex(newIndex);
+      let newGuesses = [...guesses];
+      newGuesses[newIndex].word = "";
+      newGuesses[newIndex].results = [];
+      console.log(newGuesses);
+      setGuesses(newGuesses);
+    },
+    [guesses, currentIndex]
+  );
+
+  // console.log(answer);
 
   let processInput = (e) => {
     setInput(e.target.value);
@@ -95,6 +116,7 @@ function Game({ cheatMode }) {
         <Banner endResult={endOfGame} currentIndex={currentIndex} answer={answer} resetGame={resetGame}></Banner>
       )}
       <Keyboard letters={letters} updateLetter={updateLetter} cheatMode={cheatMode} />
+      <Key></Key>
     </div>
   );
 }
