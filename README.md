@@ -37,7 +37,7 @@ export const DEFAULT_LETTERS = {
 - I think I was a little overboard with individual component creation.
 ### Notes while watching solutions
 
-* Use minLength & maxLength on the html input (although that can occasionally fail)
+* ~~Use minLength & maxLength on the html input (although that can occasionally fail)~~ just kidding use [input pattern](https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_pattern)
 * Careful not to create css classes called "undefined"
 * oh my god all you have to do to check for victory is if guess == solution /facepalm
     * This one I'm not fixing (I want a reference for reduce syntax anyway)
