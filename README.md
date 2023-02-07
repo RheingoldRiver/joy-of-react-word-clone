@@ -2,6 +2,14 @@
 
 ## Joy of React, Project I
 Both stretch goals completed.
+
+### Additional bonus things I did
+
+* Add a "Cheat Mode"
+    * Cheat mode allows you to click the keyboard to see if a letter is in the word. "Cheat mode misplaced" has a value less than guessed-but-incorrect-placement.
+    * Cheat mode also enables ctrl+Z, which is implemented via two hooks, useModifierKey and useHotkey.
+    * Cheat mode setting is stored in localStorage.
+
 ### Notes before watching solutions
 - I made two separate objects for tracking the positions & the states of each letter, because it was a LOT faster to type out each of the letters that way:
 
