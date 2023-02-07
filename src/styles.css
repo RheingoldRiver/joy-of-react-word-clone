@@ -96,8 +96,8 @@ h1 {
   max-width: min(500px, 58vh, 100%);
 }
 
-.game-wrapper.sad .guess-input-wrapper,
-.game-wrapper.happy .guess-input-wrapper {
+.game-wrapper .sad .guess-input-wrapper,
+.game-wrapper .happy .guess-input-wrapper {
   height:unset;
 }
 
