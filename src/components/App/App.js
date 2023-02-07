@@ -4,7 +4,9 @@ import CheatMode from "../CheatMode/CheatMode";
 import React from "react";
 
 function App() {
-  const [cheatMode, setCheatMode] = React.useState(false);
+  const [cheatMode, setCheatMode] = React.useState(() => {
+    return (window.localStorage.getItem("cheat-mode") ?? "false") === "true";
+  });
   let gameClass = "game-wrapper";
   if (cheatMode) {
     gameClass += " cheat-mode";
