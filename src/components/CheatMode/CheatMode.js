@@ -7,9 +7,11 @@ function CheatMode({ cheatMode, setCheatMode }) {
           type="checkbox"
           id="cheat-mode-toggle"
           name="cheatmode"
-          value={cheatMode}
+          checked={cheatMode}
           onChange={(e) => {
-            setCheatMode(e.target.checked);
+            const isChecked = e.target.checked;
+            setCheatMode(isChecked);
+            window.localStorage.setItem("cheat-mode", isChecked);
           }}
         ></input>
       </label>
