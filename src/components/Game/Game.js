@@ -34,7 +34,6 @@ function Game({ cheatMode }) {
       let newGuesses = [...guesses];
       newGuesses[newIndex].word = "";
       newGuesses[newIndex].results = [];
-      console.log(newGuesses);
       setGuesses(newGuesses);
     },
     [guesses, currentIndex]
