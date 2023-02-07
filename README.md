@@ -49,8 +49,9 @@ export const DEFAULT_LETTERS = {
 
 ### Keyboard
 
-![image](https://user-images.githubusercontent.com/18037011/215325797-78b77f97-c0f9-4707-adae-c3d0033c37aa.png)
+![image](https://user-images.githubusercontent.com/18037011/217351221-7a521263-2175-4500-b0d7-17e58fe3cac8.png)
+
 
 ### Buttons
-![image](https://user-images.githubusercontent.com/18037011/215329798-978eef9d-7d53-42e6-956d-75b439e601a8.png)
-![image](https://user-images.githubusercontent.com/18037011/215329835-89f478b2-4a41-481c-84b6-00915dbb2559.png)
+![image](https://user-images.githubusercontent.com/18037011/217356786-bd447c2e-9dd7-483e-bbcd-d16876284cf4.png)
+![image](https://user-images.githubusercontent.com/18037011/217356874-6e6117fb-8ab2-49c8-af7f-9544c3c76644.png)
