@@ -64,6 +64,7 @@ button {
 
 header {
   display: flex;
+  flex-direction:column;
   height: var(--header-height);
   border-bottom: 1px solid var(--color-gray-700);
   color: var(--color-gray-300);
@@ -73,6 +74,13 @@ header .side {
   width: var(--header-height);
   display: grid;
   place-content: center;
+}
+
+.total-score {
+  display:flex;
+  width:100%;
+  justify-content: center;
+  font-size:25px;
 }
 
 h1 {
