@@ -7,7 +7,7 @@ Both stretch goals completed.
 
 * Add a "Cheat Mode"
     * Cheat mode allows you to click the keyboard to see if a letter is in the word. "Cheat mode misplaced" has a value less than guessed-but-incorrect-placement.
-    * Cheat mode also enables ctrl+Z, which is implemented via two hooks, useModifierKey and useHotkey.
+    * Cheat mode also enables ctrl+Z, which is implemented via ~~two hooks, useModifierKey and useHotkey~~ [the ctrlKey property of keyboard events](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/ctrlKey) and one hook, useHotKey.
     * Cheat mode setting is stored in localStorage.
 
 ### Notes before watching solutions
@@ -48,10 +48,9 @@ export const DEFAULT_LETTERS = {
 ## Screenshots
 
 ### Keyboard
-
-![image](https://user-images.githubusercontent.com/18037011/217351221-7a521263-2175-4500-b0d7-17e58fe3cac8.png)
+![image](https://user-images.githubusercontent.com/18037011/217552313-f582742b-7d5a-44b7-98c7-055188f96802.png)
 
 
 ### Buttons
-![image](https://user-images.githubusercontent.com/18037011/217356786-bd447c2e-9dd7-483e-bbcd-d16876284cf4.png)
-![image](https://user-images.githubusercontent.com/18037011/217356874-6e6117fb-8ab2-49c8-af7f-9544c3c76644.png)
+![image](https://user-images.githubusercontent.com/18037011/217552530-6d9310ba-fa6f-499a-a8bc-bc1225ea15f4.png)
+![image](https://user-images.githubusercontent.com/18037011/217552672-5da863f8-f0f8-424d-863a-2cc72c5f35eb.png)
