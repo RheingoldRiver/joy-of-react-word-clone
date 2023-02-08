@@ -5,11 +5,13 @@ Both stretch goals completed.
 
 ### Additional bonus things I did
 
-* Add a "Cheat Mode"
+* Added a "Cheat Mode"
     * Cheat mode allows you to click the keyboard to see if a letter is in the word. "Cheat mode misplaced" has a value less than guessed-but-incorrect-placement.
     * Cheat mode also enables ctrl+Z, which is implemented via ~~two hooks, useModifierKey and useHotkey~~ [the ctrlKey property of keyboard events](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/ctrlKey) and one hook, useHotKey.
     * Cheat mode setting is stored in localStorage.
 * Spent a while making actually nice css for the keyboard (at least I think so) (I followed Refactoring UI's advice and added more whitespace between the letters than I was going to, and used a box shadow instead of an outline or border, and wow it actually looks good see screenshots)
+* Added a total score counter.
+    * Total score also writes to local storage.
 
 ### Notes before watching solutions
 - I made two separate objects for tracking the positions & the states of each letter, because it was a LOT faster to type out each of the letters that way:
@@ -58,3 +60,7 @@ export const DEFAULT_LETTERS = {
 
 ### Cheat Mode
 ![image](https://user-images.githubusercontent.com/18037011/217553654-f019c20a-6ec5-42ac-bfb7-6c1f815b798c.png)
+
+### Total score
+Other screenshots were taken before total score was added
+![image](https://user-images.githubusercontent.com/18037011/217564669-87231716-1b5d-4ad9-8a8c-a661ed5af704.png)
