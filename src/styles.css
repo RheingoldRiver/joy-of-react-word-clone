@@ -179,6 +179,7 @@ h1 {
   flex-direction: column;
   gap: 8px;
   height: 6.75rem;
+  margin-bottom:5px;
 }
 
 .guess-input-wrapper label {
@@ -193,6 +194,7 @@ h1 {
   border-radius: 4px;
   padding: 8px 16px;
   outline-offset: 4px;
+  margin-bottom:3px;
 }
 
 .banner {
