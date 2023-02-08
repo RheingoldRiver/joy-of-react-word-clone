@@ -17,13 +17,13 @@ function App() {
   });
 
   function onWin() {
-    const newTotalWins = totalWins + 1;
+    const newTotalWins = parseInt(totalWins) + 1;
     setTotalWins(newTotalWins);
     window.localStorage.setItem("total-wins", newTotalWins);
   }
 
   function onLoss() {
-    const newTotalLosses = totalLosses + 1;
+    const newTotalLosses = parseInt(totalLosses) + 1;
     setTotalLosses(newTotalLosses);
     window.localStorage.setItem("total-losses", newTotalLosses);
   }
