@@ -10,7 +10,7 @@ import Banner from "../Banner";
 import Keyboard from "../Keyboard";
 import useHotkey from "../../hooks/use-hotkey";
 
-function Game({ cheatMode }) {
+function Game({ cheatMode, onWin, onLoss }) {
   const [input, setInput] = React.useState("");
 
   // Game State
@@ -63,6 +63,7 @@ function Game({ cheatMode }) {
     newGuesses[currentIndex].results = results;
     if (newGuess === answer) {
       setEndOfGame("happy");
+      onWin();
       return;
     }
     setCurrentIndex(currentIndex + 1);
@@ -70,6 +71,7 @@ function Game({ cheatMode }) {
       // We already know they didn't win
       // numbering offset because of 0-indexing
       setEndOfGame("sad");
+      onLoss();
     }
     setGuesses(newGuesses);
   };
