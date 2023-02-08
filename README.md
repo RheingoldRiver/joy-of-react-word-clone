@@ -54,3 +54,6 @@ export const DEFAULT_LETTERS = {
 ### Buttons
 ![image](https://user-images.githubusercontent.com/18037011/217552530-6d9310ba-fa6f-499a-a8bc-bc1225ea15f4.png)
 ![image](https://user-images.githubusercontent.com/18037011/217552672-5da863f8-f0f8-424d-863a-2cc72c5f35eb.png)
+
+### Cheat Mode
+![image](https://user-images.githubusercontent.com/18037011/217553654-f019c20a-6ec5-42ac-bfb7-6c1f815b798c.png)
