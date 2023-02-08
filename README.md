@@ -51,16 +51,14 @@ export const DEFAULT_LETTERS = {
 ## Screenshots
 
 ### Keyboard
-![image](https://user-images.githubusercontent.com/18037011/217552313-f582742b-7d5a-44b7-98c7-055188f96802.png)
-
+![image](https://user-images.githubusercontent.com/18037011/217566342-10fb9e27-7523-4ee0-860f-3e0d5aba5b05.png)
 
 ### Buttons
-![image](https://user-images.githubusercontent.com/18037011/217552530-6d9310ba-fa6f-499a-a8bc-bc1225ea15f4.png)
-![image](https://user-images.githubusercontent.com/18037011/217552672-5da863f8-f0f8-424d-863a-2cc72c5f35eb.png)
+![image](https://user-images.githubusercontent.com/18037011/217567261-5724baac-551d-4cef-bfa7-e184e8e3db13.png)
+![image](https://user-images.githubusercontent.com/18037011/217566212-76cf9311-86a3-45c6-a073-195adab34ed7.png)
 
 ### Cheat Mode
-![image](https://user-images.githubusercontent.com/18037011/217553654-f019c20a-6ec5-42ac-bfb7-6c1f815b798c.png)
+![image](https://user-images.githubusercontent.com/18037011/217567480-fe2937a3-3709-437a-ba68-10b9815ebe40.png)
 
 ### Total score
-Other screenshots were taken before total score was added
 ![image](https://user-images.githubusercontent.com/18037011/217564669-87231716-1b5d-4ad9-8a8c-a661ed5af704.png)
