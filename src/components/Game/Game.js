@@ -75,12 +75,15 @@ function Game({ cheatMode }) {
   };
 
   let updateLetter = (letter) => {
+    if (!cheatMode) return;
     let newLetters = { ...letters };
     const currentScore = PLACEMENT_VALUES[newLetters[letter]];
-    if (cheatMode && answer.includes(letter) && currentScore <= PLACEMENT_VALUES.misplaced_cheating) {
+    if (answer.includes(letter) && currentScore <= PLACEMENT_VALUES.misplaced_cheating) {
       newLetters[letter] = "misplaced_cheating";
-      setLetters(newLetters);
+    } else {
+      newLetters[letter] = "incorrect_cheating";
     }
+    setLetters(newLetters);
   };
 
   let resetGame = (e) => {

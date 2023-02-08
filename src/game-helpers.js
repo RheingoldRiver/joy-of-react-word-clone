@@ -22,10 +22,12 @@ export function checkGuess(guess, answer) {
 }
 
 export const PLACEMENT_VALUES = {
-  incorrect: 0,
-  misplaced_cheating: 1,
-  misplaced: 2,
-  correct: 3,
+  unknown: 1,
+  incorrect_cheating: 2,
+  incorrect: 3,
+  misplaced_cheating: 4,
+  misplaced: 5,
+  correct: 6,
 };
 
 export function updateLetters(letters, letter, result) {
