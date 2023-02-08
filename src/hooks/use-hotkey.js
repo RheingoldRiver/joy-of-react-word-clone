@@ -1,13 +1,17 @@
 import { useEffect } from "react";
-import useModifierKey from "./use-modifier-key";
 
 function useHotkey(modifierKey, letterKey, action) {
-  const modifierKeyDown = useModifierKey(modifierKey);
   useEffect(() => {
     function doActionOnKeypress(e) {
-      if (!modifierKeyDown) return;
       if (e.isComposing || e.keyCode === 229) return;
       if (e.key !== letterKey.toLowerCase()) return;
+      let doAction = false;
+      if (modifierKey === "Control" && e.ctrlKey) {
+        doAction = true;
+      } else if (modifierKey === "Alt" && e.altKey) {
+        doAction = true;
+      }
+      if (!doAction) return;
       action();
     }
 
@@ -15,7 +19,7 @@ function useHotkey(modifierKey, letterKey, action) {
     return () => {
       window.removeEventListener("keydown", doActionOnKeypress);
     };
-  }, [modifierKeyDown, letterKey, action]);
+  }, [letterKey, action, modifierKey]);
 }
 
 export default useHotkey;
