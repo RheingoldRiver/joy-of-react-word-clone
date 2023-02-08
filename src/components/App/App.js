@@ -25,7 +25,7 @@ function App() {
   function onLoss() {
     const newTotalLosses = totalLosses + 1;
     setTotalLosses(newTotalLosses);
-    window.localStorage.setItem("total-wins", newTotalLosses);
+    window.localStorage.setItem("total-losses", newTotalLosses);
   }
 
   let gameClass = "game-wrapper";
