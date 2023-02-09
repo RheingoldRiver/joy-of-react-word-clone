@@ -1,10 +1,7 @@
-function Header({ totalWins, totalLosses }) {
+function Header() {
   return (
     <header>
       <h1>Word Game</h1>
-      <div className="total-score">
-        {totalWins} / {totalLosses}
-      </div>
     </header>
   );
 }
