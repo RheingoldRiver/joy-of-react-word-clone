@@ -50,15 +50,10 @@ export const DEFAULT_LETTERS = {
 
 ## Screenshots
 
-### Keyboard
+### Game
 ![image](https://user-images.githubusercontent.com/18037011/217566342-10fb9e27-7523-4ee0-860f-3e0d5aba5b05.png)
-
-### Buttons
+### Using cheat mode
+![image](https://user-images.githubusercontent.com/18037011/217567480-fe2937a3-3709-437a-ba68-10b9815ebe40.png)
+### Win/loss
 ![image](https://user-images.githubusercontent.com/18037011/217567261-5724baac-551d-4cef-bfa7-e184e8e3db13.png)
 ![image](https://user-images.githubusercontent.com/18037011/217566212-76cf9311-86a3-45c6-a073-195adab34ed7.png)
-
-### Cheat Mode
-![image](https://user-images.githubusercontent.com/18037011/217567480-fe2937a3-3709-437a-ba68-10b9815ebe40.png)
-
-### Total score
-![image](https://user-images.githubusercontent.com/18037011/217564669-87231716-1b5d-4ad9-8a8c-a661ed5af704.png)
